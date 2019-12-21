@@ -13,20 +13,23 @@ module.exports = function (app) {
 
         var bestMatchName = '';
         var bestMatchImage = '';
-        var differenceTotal = 100;
+        var totalDifference = 100;
+
+        console.log(userInput)
 
         for (var i = 0; i < friends.length; i++) {
             var diff = 0;
             for (var j = 0; j < userResponse.length; j++) {
                 diff += Math.abs(friends[i].scores[j] - userResponse[j]);
             }
-            if (diff < differenceTotal) {
-                differenceTotal = diff;
+            if (diff < totalDifference) {
+                totalDifference = diff;
                 bestMatchName = friends[i].name;
                 bestMatchImage = friends[i].photo;
             }
         }
+        friends.push(userInput);
     });
 }
 
-friends.push(userInput);
+

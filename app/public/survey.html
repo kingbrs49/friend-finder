@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Which Associate Will YOU Acquire?</title>
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-        crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
@@ -36,8 +35,8 @@
         <input type="text" id="photo" class="form-control" required>
         <hr>
         <h3>Question 1</h3>
-        <h4 class="font-weight-normal">You have a passion for watching sports, and share a community with people who
-            like the same teams you like.</h4>
+        <h4 class="font-weight-normal">If you see someone in trouble in a dark alley, you would do something to help.
+        </h4>
         <select class="chosen-select" id="q1">
             <option value></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -57,7 +56,7 @@
             <option value="5">5 (Strongly Agree)</option>
         </select>
         <h3>Question 3</h3>
-        <h4 class="font-weight-normal">Proxy for question 3.</h4>
+        <h4 class="font-weight-normal">Physical fitness is extremely important in your life.</h4>
         <select class="chosen-select" id="q3">
             <option value></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -67,7 +66,7 @@
             <option value="5">5 (Strongly Agree)</option>
         </select>
         <h3>Question 4</h3>
-        <h4 class="font-weight-normal">Proxy for question 4.</h4>
+        <h4 class="font-weight-normal">You would do just about anything to protect the people you care about.</h4>
         <select class="chosen-select" id="q4">
             <option value></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -77,7 +76,8 @@
             <option value="5">5 (Strongly Agree)</option>
         </select>
         <h3>Question 5</h3>
-        <h4 class="font-weight-normal">Proxy for question 5.</h4>
+        <h4 class="font-weight-normal">You would find it difficult to ask out that special someone you're interested in.
+        </h4>
         <select class="chosen-select" id="q5">
             <option value></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -87,7 +87,7 @@
             <option value="5">5 (Strongly Agree)</option>
         </select>
         <h3>Question 6</h3>
-        <h4 class="font-weight-normal">Proxy for question 6.</h4>
+        <h4 class="font-weight-normal">Work issues get in the way of other aspects in your life.</h4>
         <select class="chosen-select" id="q6">
             <option value></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -97,8 +97,8 @@
             <option value="5">5 (Strongly Agree)</option>
         </select>
         <h3>Question 7</h3>
-        <h4 class="font-weight-normal">Proxy for question 7.</h4>
-        <select class="chosen-select" id="q" 7>
+        <h4 class="font-weight-normal">You get along with children, no matter the situation.</h4>
+        <select class="chosen-select" id="q7">
             <option value></option>
             <option value="1">1 (Strongly Disagree)</option>
             <option value="2">2</option>
@@ -107,7 +107,8 @@
             <option value="5">5 (Strongly Agree)</option>
         </select>
         <h3>Question 8</h3>
-        <h4 class="font-weight-normal">Proxy for question 8.</h4>
+        <h4 class="font-weight-normal">Even in the face of adversity, you will stand up for yourself, and for others.
+        </h4>
         <select class="chosen-select" id="q8">
             <option value></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -117,7 +118,7 @@
             <option value="5">5 (Strongly Agree)</option>
         </select>
         <h3>Question 9</h3>
-        <h4 class="font-weight-normal">Proxy for question 9.</h4>
+        <h4 class="font-weight-normal">Music is a driving force in your life.</h4>
         <select class="chosen-select" id="q9">
             <option value></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -127,7 +128,8 @@
             <option value="5">5 (Strongly Agree)</option>
         </select>
         <h3>Question 10</h3>
-        <h4 class="font-weight-normal">Proxy for question 10.</h4>
+        <h4 class="font-weight-normal">Even when the situation is out of control, you can manage to stay calm, cool, and
+            collected.</h4>
         <select class="chosen-select" id="q10">
             <option value></option>
             <option value="1">1 (Strongly Disagree)</option>
@@ -143,8 +145,40 @@
             Submit
         </button>
         <hr>
-
     </div>
+
+    <footer>
+        <div class="container">
+            <a href="/api/friends">API Friends Link</a> || <a href="https://github.com/kingbrs49/friend-finder">Github
+                Repo</a>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+        $("#submit").on("click", function (event) {
+            event.preventDefault();
+            var userInput = {
+                name: $("#name").val(),
+                photo: $("#photo").val(),
+                scores: [
+                    $("#q1").val().trim(),
+                    $("#q2").val().trim(),
+                    $("#q3").val().trim(),
+                    $("#q4").val().trim(),
+                    $("#q5").val().trim(),
+                    $("#q6").val().trim(),
+                    $("#q7").val().trim(),
+                    $("#q8").val().trim(),
+                    $("#q9").val().trim(),
+                    $("#q10").val().trim()
+                ]
+            };
+            //console.log(userInput)
+
+            $.post("/api/friends", userInput)
+        });
+    </script>
+
 </body>
 
 </html>
