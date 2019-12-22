@@ -28,6 +28,14 @@ module.exports = function (app) {
                 bestMatchImage = friends[i].photo;
             }
         }
+        var bestMatch = {
+            name: bestMatchName,
+            photo: bestMatchImage
+        }
+        console.log(bestMatch)
+        // console.log(bestMatchName)
+        // console.log(bestMatchImage)
+        res.json(bestMatch)
         friends.push(userInput);
     });
 }
